@@ -1,0 +1,32 @@
+:root {
+
+}
+
+* ,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.password-strength {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+li {
+  width: 0.625rem;
+  height: 1.75rem;
+  border: 2px solid #000;
+}
