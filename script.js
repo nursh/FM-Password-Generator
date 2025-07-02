@@ -41,9 +41,14 @@ button.addEventListener('click', generatePassword);
 
 const passwordLengthSlider = document.querySelector("input[type='range']");
 const passwordLengthText = document.getElementById('password-length');
+setPasswordLength();
+
+function setPasswordLength(val) {
+  passwordLengthText.textContent = val || passwordLengthSlider.value
+}
 
 function showPasswordLength(evt) {
-  passwordLengthText.textContent = evt.target.value;
+  setPasswordLength(evt.target.value);
 }
 
 passwordLengthSlider.addEventListener('input', showPasswordLength);
