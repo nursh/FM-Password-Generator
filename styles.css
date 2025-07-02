@@ -39,6 +39,18 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "JetBrainsMono";
+  src:
+    url("./assets/fonts/static/JetBrainsMono-Bold.ttf"),
+    url("./assets/fonts/static/JetBrainsMono-BoldItalic.ttf");
+}
+
+body {
+  line-height: 1.3;
+  font-family: "JetBrainsMono", monospace;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
