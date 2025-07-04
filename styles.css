@@ -170,3 +170,34 @@ h1 {
 main {
   color: var(--clr-grey-200);
 }
+
+button {
+  background-color: var(--clr-green);
+  display: flex;
+  align-items: center;
+  padding: var(--spg-200) var(--spg-1300);
+  gap: var(--spg-200);
+
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-grey-800);
+}
+
+button svg {
+  width: 0.7rem;
+  height: 0.75rem;
+  fill: #24232C;
+}
+
+button:active,
+button:hover {
+  background: var(--clr-grey-800);
+  color: var(--clr-green);
+  border: 2px solid var(--clr-green);
+}
+
+button:active svg,
+button:hover svg {
+  fill: var(--clr-green);
+}
