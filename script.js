@@ -43,9 +43,8 @@ const passwordLengthSlider = document.querySelector("input[type='range']");
 const passwordLengthText = document.getElementById('password-length');
 setPasswordLength();
 
-function setPasswordLength(val = 0) {
-  passwordLengthText.textContent = val; 
-  console.log(passwordLengthText.textContent)
+function setPasswordLength(val) {
+  passwordLengthText.textContent = val || passwordLengthSlider.value;
 }
 
 function showPasswordLength(evt) {

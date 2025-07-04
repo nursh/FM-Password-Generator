@@ -49,6 +49,17 @@ body {
   line-height: 1.3;
   font-family: "JetBrainsMono", monospace;
   background-color: var(--clr-grey-950);
+  min-height: 100svh;
+  min-height: 100vh;
+  padding-inline: var(--spg-300);
+
+  display: grid;
+  place-content: center;
+}
+
+p {
+  padding: 0;
+  margin: 0;
 }
 
 header {
@@ -57,6 +68,12 @@ header {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .password-strength {
@@ -75,7 +92,7 @@ ul {
 li {
   width: 0.625rem;
   height: 1.75rem;
-  border: 2px solid #000;
+  border: 2px solid var(--clr-grey-200);
 }
 
 .form-group {
@@ -109,6 +126,7 @@ input[type="range"] {
   cursor: pointer;
   background-color: var(--clr-grey-850);
   accent-color: var(--clr-grey-850);
+  width: 100%;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -200,4 +218,24 @@ button:hover {
 button:active svg,
 button:hover svg {
   fill: var(--clr-green);
+}
+
+.password-container {
+   background-color: var(--clr-grey-800);
+   padding: var(--spg-200);
+}
+
+.password-text {
+  color: var(--clr-grey-700);
+  font-size: var(--text-2);
+}
+
+.copy-icon {
+  cursor: pointer;
+}
+
+.copy-password {
+  gap: var(--spg-200);
+  color: var(--clr-green);
+  font-size: var(--text-4);
 }
