@@ -1,4 +1,4 @@
-
+// See generate-password-lite github package
 
 const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
 const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -43,8 +43,9 @@ const passwordLengthSlider = document.querySelector("input[type='range']");
 const passwordLengthText = document.getElementById('password-length');
 setPasswordLength();
 
-function setPasswordLength(val) {
-  passwordLengthText.textContent = val || passwordLengthSlider.value
+function setPasswordLength(val = 0) {
+  passwordLengthText.textContent = val; 
+  console.log(passwordLengthText.textContent)
 }
 
 function showPasswordLength(evt) {
