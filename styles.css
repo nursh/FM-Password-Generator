@@ -239,3 +239,27 @@ button:hover svg {
   color: var(--clr-green);
   font-size: var(--text-4);
 }
+
+form {
+  background-color: var(--clr-grey-800);
+  padding: var(--spg-200);
+}
+
+.password-strength-container {
+  background-color: var(--clr-grey-850);
+  padding: var(--spg-200);
+}
+
+.password-strength-container p:first-child {
+  color: var(--clr-grey-600);
+  font-size: 1rem;
+}
+
+.password-strength {
+  gap: var(--spg-200);
+}
+
+.password-strength p:first-child {
+  color: var(--clr-grey-200);
+  font-size: var(--text-3);
+}
