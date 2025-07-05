@@ -243,7 +243,7 @@ button:hover svg {
 }
 
 .password-container {
-   padding: var(--spg-200);
+  padding: var(--spg-200);
 }
 
 .password-text {
@@ -293,4 +293,18 @@ form {
 #password-length {
   color: var(--clr-green);
   font-size: var(--text-3);
+}
+
+@media (width > 32rem) {
+  .password-container {
+    padding: var(--spg-200) var(--spg-400);
+  }
+
+  form {
+    padding: var(--spg-300) var(--spg-400);
+  }
+
+  button {
+    --flow-gap: var(--spg-400);
+  }
 }
