@@ -10,7 +10,7 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <title>Frontend Mentor | Password generator app</title>
   </head>
   <body>
@@ -19,45 +19,51 @@
     </header>
 
     <main>
-
-      <div class="password-container row">
+      <div class="password-container row container">
         <p class="password-text">P4$5W0rD!</p>
         <p class="row copy-password">
-          <span class="uppercase">copied</span>
-          <img src="assets/images/icon-copy.svg" alt="copy icon" class="copy-icon" />
+          <span class="uppercase hidden">copied</span>
+          <img
+            src="assets/images/icon-copy.svg"
+            alt="copy icon"
+            class="copy-icon"
+          />
         </p>
       </div>
-      <form>
-        <div>
+      <form class="flow container">
+        <div class="password-character row">
           <p>Character Length</p>
           <p id="password-length"></p>
-          <input type="range" min="0" max="20" step="1" />
         </div>
 
-        <div class="form-group">
-          <input type="checkbox" name="uppercase" id="uppercase" />
-          <label for="uppercase">Include Uppercase Letters</label>
-        </div>
+        <input type="range" min="0" max="20" step="1" value="0" />
 
-        <div class="form-group">
-          <input type="checkbox" name="lowercase" id="lowercase" />
-          <label for="lowercase">Include Lowercase Letters</label>
-        </div>
+        <div class="form-groups flow">
+          <div class="form-group">
+            <input type="checkbox" name="uppercase" id="uppercase" />
+            <label for="uppercase">Include Uppercase Letters</label>
+          </div>
 
-        <div class="form-group">
-          <input type="checkbox" name="numbers" id="numbers" />
-          <label for="numbers">Include Numbers</label>
-        </div>
+          <div class="form-group">
+            <input type="checkbox" name="lowercase" id="lowercase" />
+            <label for="lowercase">Include Lowercase Letters</label>
+          </div>
 
-        <div class="form-group">
-          <input type="checkbox" name="symbols" id="symbols" />
-          <label for="symbols">Include Symbols</label>
+          <div class="form-group">
+            <input type="checkbox" name="numbers" id="numbers" />
+            <label for="numbers">Include Numbers</label>
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" name="symbols" id="symbols" />
+            <label for="symbols">Include Symbols</label>
+          </div>
         </div>
 
         <div class="password-strength-container row">
           <p class="uppercase">Strength</p>
           <div class="password-strength row">
-            <p class="uppercase">Medium</p>
+            <p class="uppercase hidden"></p>
             <ul id="password-strength-indicator">
               <li></li>
               <li></li>
@@ -69,14 +75,16 @@
 
         <button type="submit" class="uppercase">
           Generate
-          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path  d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
+          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+            />
+          </svg>
         </button>
       </form>
 
       <h2 id="password"></h2>
-      <button id="generate" >
-        Generate Password
-      </button>
+      <button id="generate">Generate Password</button>
     </main>
     <script src="script.js"></script>
   </body>

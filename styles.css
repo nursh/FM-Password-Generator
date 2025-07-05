@@ -76,6 +76,18 @@ header {
   justify-content: space-between;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.flow > *+* {
+  margin-block-start: var(--flow-gap, var(--spg-400));
+}
+
 .password-strength {
   display: flex;
   align-items: center;
@@ -99,6 +111,12 @@ li {
   display: flex;
   align-items: center;
   gap: var(--spg-300);
+  --flow-gap: var(--spg-200);
+}
+
+label {
+  color: var(--clr-grey-200);
+  font-size: 1rem;
 }
 
 input[type="checkbox"] {
@@ -127,6 +145,7 @@ input[type="range"] {
   background-color: var(--clr-grey-850);
   accent-color: var(--clr-grey-850);
   width: 100%;
+  --flow-gap: var(--spg-100);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -192,14 +211,17 @@ main {
 button {
   background-color: var(--clr-green);
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: var(--spg-200) var(--spg-1300);
   gap: var(--spg-200);
+  --flow-gap: var(--spg-200);
 
   border: none;
   font-size: 1rem;
   font-weight: 700;
   color: var(--clr-grey-800);
+  width: 100%;
 }
 
 button svg {
@@ -221,7 +243,6 @@ button:hover svg {
 }
 
 .password-container {
-   background-color: var(--clr-grey-800);
    padding: var(--spg-200);
 }
 
@@ -240,9 +261,14 @@ button:hover svg {
   font-size: var(--text-4);
 }
 
-form {
+.container {
   background-color: var(--clr-grey-800);
+  width: clamp(19.5rem, calc(100vw - (2 * var(--spg-200))), 30rem);
+}
+
+form {
   padding: var(--spg-200);
+  margin-block-start: var(--spg-200);
 }
 
 .password-strength-container {
@@ -261,5 +287,10 @@ form {
 
 .password-strength p:first-child {
   color: var(--clr-grey-200);
+  font-size: var(--text-3);
+}
+
+#password-length {
+  color: var(--clr-green);
   font-size: var(--text-3);
 }
