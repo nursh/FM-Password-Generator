@@ -53,3 +53,15 @@ function showPasswordLength(evt) {
 
 passwordLengthSlider.addEventListener('input', showPasswordLength);
 
+
+// copy password
+const copyIcon = document.getElementById('copy-icon');
+const copyPasswordText = document.getElementById('copy-password-text');
+const passwordText = document.getElementById('password-text');
+
+copyIcon.addEventListener('click', () => {
+  navigator.clipboard.writeText(passwordText.textContent);
+  copyPasswordText.classList.remove('hidden');
+});
+
+

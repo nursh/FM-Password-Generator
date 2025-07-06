@@ -80,10 +80,6 @@ header {
   visibility: hidden;
 }
 
-.visible {
-  visibility: visible;
-}
-
 .flow > *+* {
   margin-block-start: var(--flow-gap, var(--spg-400));
 }
@@ -262,7 +258,7 @@ button:hover svg {
   padding: var(--spg-200);
 }
 
-.password-text {
+#password-text {
   color: var(--clr-grey-700);
   font-size: var(--text-2);
 }
