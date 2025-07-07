@@ -39,7 +39,7 @@
         </div>
         
         <input type="range" min="0" max="20" step="1" value="0" name="passlength" id="passlength" />
-        <p id="empty-char-error"></p>
+        <p id="empty-char-error" class="error hide-error">Password character length must be greater than 0</p>
 
         <div class="form-groups flow">
           <div class="form-group">
@@ -63,6 +63,8 @@
           </div>
         </div>
 
+        <p id="empty-criteria-error" class="error hide-error">Password generation criteria must be set</p>
+
         <div class="password-strength-container row">
           <p class="uppercase">Strength</p>
           <div class="password-strength row">
@@ -85,9 +87,6 @@
           </svg>
         </button>
       </form>
-
-      <h2 id="password"></h2>
-      <button id="generate">Generate Password</button>
     </main>
     <script src="script.js"></script>
   </body>

@@ -89,10 +89,13 @@ header {
   align-items: center;
 }
 
-#empty-char-error {
-  display: none;
+.error {
   color: var(--clr-red);
   font-size: 0.8rem;
+}
+
+.hide-error {
+  display: none;
 }
 
 ul {

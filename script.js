@@ -4,7 +4,10 @@ const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
 const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers = '0123456789';
 const symbols = "!#$%&'()*+,-./:;<=>?@[]^_{|}~";
-const emptyCharError = '* Password character length must be greater than 0';
+const errors = {
+  length: false,
+  criteria: false
+}
 
 
 function getRandomChar(arr) {
@@ -15,9 +18,20 @@ function getRandomChar(arr) {
 function generatePassword(passwordLength, passwordCriteria) {
   let password = '';
 
-  if (passwordLength === 0) {
-    return emptyCharError;
+  errors['criteria'] = false;
+  errors['length'] = false;
+  const noLength = passwordLength === 0;
+  const noCriteria = passwordCriteria.length === 1 && passwordCriteria.includes('passlength');
+
+  if (noLength) {
+    errors['length'] = true;
   }
+
+  if (noCriteria) {
+    errors['criteria'] = true;
+  }
+    
+  if (errors['length'] || errors['criteria']) return;
 
   while(password.length < passwordLength) {
     if (passwordCriteria.includes('uppercase') && password.length < passwordLength) {
@@ -43,6 +57,7 @@ function handleSubmit(event) {
   // add hidden to copied text, if it was present
   copyPasswordText.classList.add('hidden');
   const emptyCharElem = document.getElementById('empty-char-error');
+  const emptyCriteria = document.getElementById('empty-criteria-error');
   const passwordText = document.getElementById('password-text');
 
   const formData = new FormData(event.target);
@@ -51,17 +66,20 @@ function handleSubmit(event) {
   const passwordCriteria = Object.keys(data);
   const password = generatePassword(passwordLength, passwordCriteria);
 
-  if (password === emptyCharError) {
-    emptyCharElem.textContent = password;
-    emptyCharElem.style.setProperty('display', 'block');
+  if (errors['length'] && errors['criteria']) {
+    emptyCriteria.classList.remove('hide-error');
+    emptyCharElem.classList.remove('hide-error');
+  } else if (errors['length']) {
+    emptyCharElem.classList.remove('hide-error');
+    emptyCriteria.classList.add('hide-error');
+  } else if (errors['criteria']) {
+    emptyCriteria.classList.remove('hide-error');
+    emptyCharElem.classList.add('hide-error');
   } else {
-    emptyCharElem.textContent = '';
-    emptyCharElem.style.setProperty('display', 'none');
+    emptyCharElem.classList.add('hide-error');
+    emptyCriteria.classList.add('hide-error');
     passwordText.textContent = password;
   }
-
-  console.log(password)
-
 }
 
 const form = document.querySelector('form');
