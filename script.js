@@ -4,6 +4,7 @@ const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
 const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numbers = '0123456789';
 const symbols = "!#$%&'()*+,-./:;<=>?@[]^_{|}~";
+const emptyCharError = '* Password character length must be greater than 0';
 
 
 function getRandomChar(arr) {
@@ -11,34 +12,63 @@ function getRandomChar(arr) {
   return arr[index];
 }
 
-
-
-const passwordContents = [];
-const upperCase = 'upper';
-const lowercase = 'lower';
-
-
-function generatePassword() {
-  const passwordText = document.getElementById('password');
+function generatePassword(passwordLength, passwordCriteria) {
   let password = '';
-  const maxLength = 10;
 
-  for(let i = 0; i < maxLength; i+= 1) {
-    password += getRandomChar(lowerCaseChars);
-    password += getRandomChar(upperCase);
-    password += getRandomChar(numbers);
-    password += getRandomChar(symbols);
+  if (passwordLength === 0) {
+    return emptyCharError;
   }
 
-  if (passwordText) {
-    passwordText.textContent = password;
+  while(password.length < passwordLength) {
+    if (passwordCriteria.includes('uppercase') && password.length < passwordLength) {
+      password += getRandomChar(upperCaseChars);
+    }
+    if (passwordCriteria.includes('lowercase') && password.length < passwordLength) {
+      password += getRandomChar(lowerCaseChars);
+    }
+    if (passwordCriteria.includes('numbers') && password.length < passwordLength) {
+      password += getRandomChar(numbers);
+    }
+    if (passwordCriteria.includes('symbols') && password.length < passwordLength) {
+      password += getRandomChar(symbols);
+    }
   }
+
+  return password;
 }
 
-const button = document.getElementById('generate');
-button.addEventListener('click', generatePassword);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  // add hidden to copied text, if it was present
+  copyPasswordText.classList.add('hidden');
+  const emptyCharElem = document.getElementById('empty-char-error');
+  const passwordText = document.getElementById('password-text');
+
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+  const passwordLength = parseInt(data['passlength'], 10);
+  const passwordCriteria = Object.keys(data);
+  const password = generatePassword(passwordLength, passwordCriteria);
+
+  if (password === emptyCharError) {
+    emptyCharElem.textContent = password;
+    emptyCharElem.style.setProperty('display', 'block');
+  } else {
+    emptyCharElem.textContent = '';
+    emptyCharElem.style.setProperty('display', 'none');
+    passwordText.textContent = password;
+  }
+
+  console.log(password)
+
+}
+
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
 
 
+// Slider information
 const passwordLengthSlider = document.querySelector("input[type='range']");
 const passwordLengthText = document.getElementById('password-length');
 setPasswordLength();

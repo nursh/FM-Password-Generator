@@ -89,6 +89,12 @@ header {
   align-items: center;
 }
 
+#empty-char-error {
+  display: none;
+  color: var(--clr-red);
+  font-size: 0.8rem;
+}
+
 ul {
   margin: 0;
   padding: 0;
