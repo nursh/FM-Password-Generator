@@ -164,11 +164,17 @@ function setPasswordLength(val) {
   passwordLengthText.textContent = val || passwordLengthSlider.value;
 }
 
-function showPasswordLength(evt) {
-  setPasswordLength(evt.target.value);
+function handleSliderChange(evt) {
+  const value = evt.target.value;
+  const max = this.getAttribute('max');
+  setPasswordLength(value);
+
+  
+  const sliderVal = +value / +max * 100;
+  this.style.setProperty('--slider-val', `${sliderVal}%`);
 }
 
-passwordLengthSlider.addEventListener("input", showPasswordLength);
+passwordLengthSlider.addEventListener("input", handleSliderChange);
 
 // copy password
 const copyIcon = document.getElementById("copy-icon");

@@ -31,6 +31,8 @@
   --text-2: 2rem;
   --text-3: 1.5rem;
   --text-4: 1.25rem;
+
+ 
 }
 
 * ,
@@ -167,24 +169,14 @@ input[type="range"] {
   appearance: none;
   height: 0.5rem;
   cursor: pointer;
-  background-color: var(--clr-grey-850);
-  accent-color: var(--clr-grey-850);
   width: 100%;
   --flow-gap: var(--spg-100);
+
+  --slider-val: 0;
+  background: linear-gradient(to right, var(--clr-green) var(--slider-val), var(--clr-grey-850) var(--slider-val));
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-  background-color: var(--clr-green);
-  height: 0.5rem;
-}
-
-input[type="range"]::-moz-range-track {
-  background-color: var(--clr-grey-850);
-  height: 0.5rem;
-}
-
-input[type="range"]::-moz-range-progress {
-  background-color: var(--clr-green);
   height: 0.5rem;
 }
 
@@ -201,6 +193,16 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]:hover::-webkit-slider-thumb {
   background-color: var(--clr-grey-850);
   border: 2px solid var(--clr-green);
+}
+
+input[type="range"]::-moz-range-track {
+  background-color: var(--clr-grey-850);
+  height: 0.5rem;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: var(--clr-green);
+  height: 0.5rem;
 }
 
 input[type="range"]::-moz-range-thumb {
