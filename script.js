@@ -114,6 +114,7 @@ function handleSubmit(event) {
     const { text, cssClass } = passwordStrengthMap[passwordStrength];
     setPasswordStrength(cssClass, text)
     passwordText.textContent = password;
+    passwordText.classList.add('grey-text');
   }
 }
 

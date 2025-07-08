@@ -66,6 +66,10 @@ header {
   margin-block-end: var(--spg-200);
 }
 
+.grey-text {
+  color: var(--clr-grey-200) !important;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
