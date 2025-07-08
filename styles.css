@@ -112,8 +112,8 @@ li {
   border: 2px solid var(--clr-grey-200);
 }
 
-.weak li:first-child,
-.weak-2 li:nth-child(-n + 2) {
+.very-weak li:first-child,
+.weak li:nth-child(-n + 2) {
   background-color: var(--clr-red);
   border: none;
 }
