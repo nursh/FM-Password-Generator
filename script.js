@@ -48,13 +48,13 @@ function handleSubmit(event) {
       passwordCriteria
     );
     const { text, cssClass } = passwordStrengthMap[passwordStrength];
-    setPasswordStrength(cssClass, text)
+    setPasswordStyles(cssClass, text)
     passwordText.textContent = password;
-    passwordText.classList.add('grey-text');
+    passwordText.style.setProperty('color', 'var(--clr-grey-200)');
   }
 }
 
-function setPasswordStrength(cssClass, text) {
+function setPasswordStyles(cssClass, text) {
   const passwordStrengthText = document.getElementById('password-strength-text');
   passwordStrengthText.textContent = text;
 
