@@ -185,8 +185,8 @@ input[type="range"]::-webkit-slider-thumb {
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
-  background-color: #E6E5EA;
-  margin-top: calc((0.5rem / 2) - (1.75rem / 2));
+  background-color: var(--clr-grey-200);
+  margin-block-start: calc((0.5rem / 2) - (1.75rem / 2));
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
@@ -321,7 +321,7 @@ form {
   font-size: var(--text-3);
 }
 
-@media (width > 32rem) {
+@media (min-width: 32rem) {
   h1 {
     font-size: var(--text-3);
   }
