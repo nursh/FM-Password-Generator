@@ -57,7 +57,7 @@ I also learnt a bit about passwords and entropy
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/nursh)
+- Frontend Mentor - [@nursh](https://www.frontendmentor.io/profile/nursh)
 
 
 ## Acknowledgments
