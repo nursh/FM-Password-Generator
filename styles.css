@@ -160,13 +160,16 @@ input[type="checkbox"]:checked {
   background-color: var(--clr-green);
 }
 
+.password-slider {
+  --flow-gap: var(--spg-100);
+}
+
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   height: 0.5rem;
   cursor: pointer;
   width: 100%;
-  --flow-gap: var(--spg-100);
 
   --slider-val: 0;
   background: linear-gradient(to right, var(--clr-green) var(--slider-val), var(--clr-grey-850) var(--slider-val));
@@ -319,6 +322,10 @@ form {
 }
 
 @media (width > 32rem) {
+  h1 {
+    font-size: var(--text-3);
+  }
+
   .password-container {
     padding: var(--spg-200) var(--spg-400);
   }
